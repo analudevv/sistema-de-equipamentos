@@ -83,7 +83,7 @@ O projeto utiliza as seguintes tecnologias:
 * **EJS**
 * **MySQL**
 
-> A stack atual será mantida durante o processo de refatoração. O objetivo é melhorar a organização e a estrutura do projeto sem substituir suas tecnologias principais.
+> A stack atual passará por uma mudança durante o processo de refatoração. O objetivo é melhorar a organização e a estrutura do projeto utilizando React, Typescript, Node e Posgresql.
 
 ---
 
