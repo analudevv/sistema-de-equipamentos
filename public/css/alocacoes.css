@@ -1,9 +1,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #ffffff;
+    background: #e9e0e0;
     margin: 0;
     padding: 20px;
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ body {
 .container {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     padding: 30px;
     max-width: 1000px;
     width: 100%;
