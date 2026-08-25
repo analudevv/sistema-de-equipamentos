@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editar Alocação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <form action="/alocacao/<%= alocacao.id %>/edit" method="POST">
+        <h1>Editar Alocação</h1>
+        <% if (error) { %>
+            <p style="color: red;"><%= error %></p>
+        <% } %>
+        <label for="numero_projetor">Número do projetor:</label>
+        <select id="numero_projetor" name="numero_projetor" required>
+            <% projetores.forEach(function(projetor) { %>
+                <option value="<%= projetor.nome %>" <%= alocacao.projetor === projetor.nome ? 'selected' : '' %>><%= projetor.nome %></option>
+            <% }); %>
+        </select>
+
+        <label for="caixa">Caixa de Som:</label>
+        <select id="caixa" name="caixa">
+            <option value="">Nenhuma</option>
+            <% caixas.forEach(function(caixa) { %>
+                <option value="<%= caixa.caixa %>" <%= alocacao.caixa === caixa.caixa ? 'selected' : '' %>><%= caixa.caixa %></option>
+            <% }); %>
+        </select>
+
+        <label for="professor">Professor:</label>
+        <select id="professor" name="professor" required>
+            <% professores.forEach(function(professor) { %>
+                <option value="<%= professor.nome %>" <%= alocacao.professor === professor.nome ? 'selected' : '' %>><%= professor.nome %></option>
+            <% }); %>
+        </select>
+
+        <label for="sala">Sala:</label>
+        <select id="sala" name="sala" required>
+            <option value="1º A" <%= alocacao.sala === '1º A' ? 'selected' : '' %>>1º A</option>
+            <option value="1º B" <%= alocacao.sala === '1º B' ? 'selected' : '' %>>1º B</option>
+            <option value="1º C" <%= alocacao.sala === '1º C' ? 'selected' : '' %>>1º C</option>
+            <option value="2º A" <%= alocacao.sala === '2º A' ? 'selected' : '' %>>2º A</option>
+            <option value="2º B" <%= alocacao.sala === '2º B' ? 'selected' : '' %>>2º B</option>
+            <option value="2º C" <%= alocacao.sala === '2º C' ? 'selected' : '' %>>2º C</option>
+            <option value="2º D" <%= alocacao.sala === '2º D' ? 'selected' : '' %>>2º D</option>
+            <option value="3º A" <%= alocacao.sala === '3º A' ? 'selected' : '' %>>3º A</option>
+            <option value="3º B" <%= alocacao.sala === '3º B' ? 'selected' : '' %>>3º B</option>
+            <option value="3º C" <%= alocacao.sala === '3º C' ? 'selected' : '' %>>3º C</option>
+        </select>
+
+        <button type="submit">Atualizar</button>
+        <a href="/alocacoes"><button type="button">Cancelar</button></a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alocação de Projetores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <form action="/alocacao" method="POST">
+        <h1>Alocação de Projetores</h1>
+        <% if (error) { %>
+            <p style="color: red;"><%= error %></p>
+        <% } %>
+        <label for="numero_projetor">Número do projetor:</label>
+        <select id="numero_projetor" name="numero_projetor" required>
+            <% projetores.forEach(function(projetor) { %>
+                <option value="<%= projetor.nome %>"><%= projetor.nome %></option>
+            <% }); %>
+        </select>
+
+        <label for="caixa">Caixa de Som:</label>
+        <select id="caixa" name="caixa">
+            <option value="">Nenhuma</option>
+            <% caixas.forEach(function(caixa) { %>
+                <option value="<%= caixa.caixa %>"><%= caixa.caixa %></option>
+            <% }); %>
+        </select>
+
+        <label for="professor">Professor:</label>
+        <select id="professor" name="professor" required>
+            <% professores.forEach(function(professor) { %>
+                <option value="<%= professor.nome %>"><%= professor.nome %></option>
+            <% }); %>
+        </select>
+
+        <label for="sala">Sala:</label>
+        <select id="sala" name="sala" required>
+            <option value="1º A">1º A</option>
+            <option value="1º B">1º B</option>
+            <option value="1º C">1º C</option>
+            <option value="2º A">2º A</option>
+            <option value="2º B">2º B</option>
+            <option value="2º C">2º C</option>
+            <option value="2º D">2º D</option>
+            <option value="3º A">3º A</option>
+            <option value="3º B">3º B</option>
+            <option value="3º C">3º C</option>
+        </select>
+
+        <button type="submit">Alocar</button>
+        <a href="/alocacoes"><button type="button">Ver Alocações</button></a>
+    <div class="logo-container">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    </form>
+</body>
+</html>

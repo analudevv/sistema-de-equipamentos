@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alocações</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/alocacoes.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Alocações</h1>
+        <% if (success){ %>
+            <div style="color: green; font-weight: bold; margin-bottom: 10px;"><%= success%></div>
+        <% } %>
+        <a href="/alocacao" class="back-link">Voltar à Alocação</a>
+        <a href="/equipamentos-devolvidos" class="back-link">Ver Equipamentos Devolvidos</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Professor</th>
+                    <th>Sala</th>
+                    <th>Projetor</th>
+                    <th>Caixa de Som</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% alocacoes.forEach(function(alocacao) { %>
+                <tr>
+                    <td><%= alocacao.id %></td>
+                    <td><%= alocacao.professor %></td>
+                    <td><%= alocacao.sala %></td>
+                    <td><%= alocacao.projetor %></td>
+                    <td><%= alocacao.caixa || 'N/A' %></td>
+                    <td><%= alocacao.data_alocacao ? new Date(alocacao.data_alocacao).toLocaleDateString('pt-BR') : '' %></td>
+                    <td><%= alocacao.hora_alocacao ? alocacao.hora_alocacao.split(':')[0] + 'h' : '' %></td>
+                    <td style="white-space: nowrap;">
+                        <a href="/alocacao/<%= alocacao.id %>/edit" class="edit-btn">Editar</a>
+                        <form action="/alocacao/<%= alocacao.id %>/delete" method="POST" style="display:inline;">
+                            <button type="submit" class="delete-btn" onclick="return confirm('Tem certeza que deseja apagar esta alocação?');">Apagar</button>
+                        </form>
+                        <form action="/alocacao/<%= alocacao.id %>/entregue" method="POST" style="display:inline;">
+                            <button type="submit" class="entregue-btn">Entregue</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+
+    <div class="logo-container">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+    </div>
+</body>
+</html>

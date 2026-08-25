@@ -1,0 +1,257 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 20px;
+}
+
+h1 {
+    color: #1B4D2E;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.back-link {
+    display: inline-block;
+    background-color: #1B4D2E;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    background-color: #14501f;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #C4822F;
+}
+
+th {
+    background-color: #1B4D2E;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9em;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.edit-btn, .delete-btn, .entregue-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.edit-btn {
+    background-color: #1B4D2E;
+    color: white;
+    box-shadow: 0 4px 10px rgba(27, 77, 46, 0.4);
+}
+
+.edit-btn:hover {
+    background-color: #14501f;
+    box-shadow: 0 6px 15px rgba(20, 80, 31, 0.6);
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.4);
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    box-shadow: 0 6px 15px rgba(200, 35, 51, 0.6);
+}
+
+.entregue-btn {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.entregue-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 15px rgba(0, 86, 179, 0.6);
+}
+
+input[type="text"], input[type="number"], input[type="email"], select, textarea {
+    border: 2px solid #C4822F;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    color: #1B4D2E;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+    border-color: #1B4D2E;
+}
+
+.logo-container {
+    display: block;
+    margin: 20px auto 0 auto;
+    max-width: 150px;
+    text-align: center;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .back-link {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.page-link {
+    display: inline-block;
+    background-color: #1B4D2E;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.page-link:hover {
+    background-color: #14501f;
+    text-decoration: none;
+}
+
+.pagination span {
+    color: #1B4D2E;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    table {
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    th:first-child, td:first-child {
+        display: none;
+    }
+
+    .edit-btn, .delete-btn, .entregue-btn {
+        display: block;
+        width: 100%;
+        margin: 2px 0;
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-link {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}

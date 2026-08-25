@@ -1,0 +1,75 @@
+create table projetores(
+id int primary key auto_increment,
+nome varchar(20) UNIQUE);
+
+insert into projetores (nome) values
+('Projetor 1'),
+('Projetor 2'),
+('Projetor 3'),
+('Projetor 4'),
+('Projetor 5'),
+('Projetor 6'),
+('Projetor 7'),
+('Projetor 8');
+
+CREATE TABLE IF NOT EXISTS admin (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(255) UNIQUE,
+password VARCHAR(255)
+)
+
+create table caixa_de_som(
+id int primary key auto_increment,
+caixa varchar(20) UNIQUE);
+
+insert into caixa_de_som (caixa) values
+('Caixa P'),
+('Caixa M'),
+('Caixa G');
+
+create table professores(
+id int primary key auto_increment,
+nome varchar(50) UNIQUE);
+
+insert into professores (nome) values
+('Márcia'),
+('Nathalia Inglês'),
+('Natalia Ed. Física'),
+('Val'),
+('Carla'),
+('Kilvia'),
+('Iolanda'),
+('Vanuska'),
+('Elisa'),
+('Rosilene'),
+('Viviane'),
+('Auxi'),
+('Fernanda'),
+('Cristina'),
+('Breno'),
+('Elizeu'),
+('Edimir'),
+('Lucas'),
+('Marcelo'),
+('Bruno'),
+('Meneses'),
+('Fernando'),
+('Felipe'),
+('Wesley'),
+('Walfrido'),
+('William'),
+('Kelly'),
+('Aureliano');
+
+CREATE TABLE IF NOT EXISTS alocacao (
+id INT AUTO_INCREMENT PRIMARY KEY,
+numero_projetor VARCHAR(20),
+professor VARCHAR(50),
+sala VARCHAR(50),
+caixa VARCHAR(20),
+status ENUM('alocado', 'entregue') DEFAULT 'alocado',
+data_alocacao DATE,
+hora_alocacao TIME,
+FOREIGN KEY (numero_projetor) REFERENCES projetores(nome),
+FOREIGN KEY (caixa) REFERENCES caixa_de_som(caixa)
+)
